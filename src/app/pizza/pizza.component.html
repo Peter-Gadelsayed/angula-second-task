@@ -1,0 +1,6 @@
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+  <div class="col" *ngFor="let recipe of recipes">
+    <app-card [imgSrc]="recipe.image_url" [title]="recipe.title" [desc]="recipe.publisher"
+      [btnText]="'Show Recipe'" (btnEvent)="handleEvent(recipe)"></app-card>
+  </div>
+</div>
