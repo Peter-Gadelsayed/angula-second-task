@@ -20,6 +20,8 @@ export class DetailsCardComponent {
   ingredients!: [];
   @Input()
   rank!: number;
+  @Input()
+  publisherUrl!: string;
 
   recipeDetails: any;
 }
