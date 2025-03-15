@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from '../app.service';
+import { AppService } from '../services/app.service';
 import { Pizza, Recipes } from '../models/pizza';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
 

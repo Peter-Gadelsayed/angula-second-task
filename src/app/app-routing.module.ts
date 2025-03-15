@@ -21,11 +21,14 @@ const routes: Routes = [
     path: 'pasta', component: PastaComponent
   },
   {
-    path: 'recipe/:id', component: RecipedetailsComponent,canActivate: [recipeGuard]
+    path: 'recipe/:id', component: RecipedetailsComponent, canActivate: [recipeGuard]
+  },
+  {
+    path: 'produts', loadChildren: () => import('./features/produts/produts.module').then(m => m.ProdutsModule)
   },
   {
     path: '**', component: NotFoundComponent
-  },
+  }
 ];
 
 @NgModule({

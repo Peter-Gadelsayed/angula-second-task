@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 import { CanActivateFn } from '@angular/router';
-import { AppService } from '../app.service';
+import { AppService } from '../services/app.service';
 
 export const recipeGuard: CanActivateFn = (route, state) => {
   const appService = inject(AppService);

@@ -1,6 +1,5 @@
 <div class="container my-3">
   <h2 class="h2">Recipe Details</h2>
-  <p *ngIf="!recipeId">Loading...</p>
   <div class="mt-5">
     <app-details-card [imgSrc]="recipeDetail.recipe.image_url" [title]="recipeDetail.recipe.title"
       [desc]="recipeDetail.recipe.publisher" [ingredients]="recipeDetail.recipe.ingredients"
