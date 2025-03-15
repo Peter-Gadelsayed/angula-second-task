@@ -21,7 +21,7 @@ const routes: Routes = [
     path: 'pasta', component: PastaComponent
   },
   {
-    path: 'recipe/:id', component: RecipedetailsComponent,
+    path: 'recipe/:id', component: RecipedetailsComponent,canActivate: [recipeGuard]
   },
   {
     path: '**', component: NotFoundComponent

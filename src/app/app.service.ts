@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class AppService {
 
+  allowAccess: boolean = false;
+
   constructor(private http: HttpClient) {
   }
 
