@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { noSpacesValidator } from 'src/app/shared/validators/no-space-validators';
 
 @Component({
   selector: 'app-create-product',
@@ -11,11 +12,11 @@ export class CreateProductComponent {
 
   constructor(private fb: FormBuilder) {
     this.product = this.fb.group({
-      name: 'Iphone 16',
-      price: '1258',
+      name: ['Iphone 16', [Validators.required, Validators.minLength(3), Validators.maxLength(50), noSpacesValidator]],
+      price: ['1258', [Validators.required, Validators.minLength(1), noSpacesValidator]],
       productData: this.fb.group({
-        info: 'Alex',
-        desc: 'Iphone'
+        info: ['Alex'],
+        desc: ['Iphone'],
       })
     });
   }

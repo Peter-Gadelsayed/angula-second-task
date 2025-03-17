@@ -2,20 +2,39 @@
   <div class="mb-3">
     <label class="form-label" for="name">Name:</label>
     <input class="form-control" formControlName="name" type="text">
+    <div *ngIf="product.get('name')?.invalid && product.get('name')?.touched">
+      <small *ngIf="product.get('name')?.errors?.['required']">Name is required.</small>
+      <small *ngIf="product.get('name')?.errors?.['noSpaces']">Name should not contain spaces.</small>
+      <small *ngIf="product.get('name')?.errors?.['minlength']">Minimum 3 characters required.</small>
+      <small *ngIf="product.get('name')?.errors?.['maxlength']">Maximum 50 characters required.</small>
+    </div>
   </div>
   <div class="mb-3">
-    <label class="form-label" for="price">Salary:</label>
+    <label class="form-label" for="price">Price:</label>
     <input class="form-control" formControlName="price" type="text">
+    <div *ngIf="product.get('price')?.invalid && product.get('price')?.touched">
+      <small *ngIf="product.get('price')?.errors?.['required']">Price is required.</small>
+      <small *ngIf="product.get('price')?.errors?.['noSpaces']">Price should not contain spaces.</small>
+      <small *ngIf="product.get('price')?.errors?.['minlength']">Minimum 1 number required.</small>
+    </div>
   </div>
   <div formGroupName="productData" class="mb-3">
     <div class="mb-3">
       <label class="form-label" for="info">Info:</label>
       <input class="form-control" formControlName="info" type="text">
+      <div *ngIf="product.get('info')?.invalid && product.get('info')?.touched">
+        <small *ngIf="product.get('info')?.errors?.['minlength']">Minimum 3 characters required.</small>
+        <small *ngIf="product.get('info')?.errors?.['maxlength']">Maximum 30 characters required.</small>
+      </div>
     </div>
     <div class="mb-3">
       <label class="form-label" for="desc">Description:</label>
       <textarea class="form-control" formControlName="desc" type="text"></textarea>
+      <div *ngIf="product.get('desc')?.invalid && product.get('desc')?.touched">
+        <small *ngIf="product.get('desc')?.errors?.['minlength']">Minimum 3 characters required.</small>
+        <small *ngIf="product.get('desc')?.errors?.['maxlength']">Maximum 120 characters required.</small>
+      </div>
     </div>
   </div>
-  <button class="btn btn-primary" type="submit">Submit</button>
+  <button class="btn btn-primary" [disabled]="product.invalid" type="submit">Submit</button>
 </form>
