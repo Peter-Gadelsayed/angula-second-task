@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,10 @@ export class AppService {
 
   constructor(private http: HttpClient) {
   }
+  private baseUrl = environment.baseUrl;
 
   apiUrl(plateType: string): string {
-    return `https://forkify-api.herokuapp.com/api/search?q=${plateType}`;
+    return `${this.baseUrl}/search?q=${plateType}`;
   }
 
   getData(plateType: string): Observable<any> {
@@ -21,7 +23,7 @@ export class AppService {
   }
 
   searchUrl(id: string): string {
-    return `https://forkify-api.herokuapp.com/api/get?rId=${id}`;
+    return `${this.baseUrl}/get?rId=${id}`;
   }
 
   getRecipeDetails(id: string): Observable<any> {
