@@ -12,16 +12,12 @@ export class AppService {
   constructor(private http: HttpClient) {
   }
 
-  apiUrl = 'https://forkify-api.herokuapp.com/api/search?q=pizza';
-
-  getData(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+  apiUrl(plateType: string): string {
+    return `https://forkify-api.herokuapp.com/api/search?q=${plateType}`;
   }
 
-  pastaUrl = 'https://forkify-api.herokuapp.com/api/search?q=pasta';
-
-  getPastaData(): Observable<any> {
-    return this.http.get<any>(this.pastaUrl);
+  getData(plateType: string): Observable<any> {
+    return this.http.get<any>(this.apiUrl(plateType));
   }
 
   searchUrl(id: string): string {

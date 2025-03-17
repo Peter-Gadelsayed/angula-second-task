@@ -14,7 +14,7 @@ export class PizzaComponent {
   recipes: Recipes[] = [];
 
   ngOnInit(): void {
-    this.apiService.getData().subscribe(
+    this.apiService.getData('pizza').subscribe(
       (data) => {
         this.recipes = data.recipes;
         console.log(this.recipes);

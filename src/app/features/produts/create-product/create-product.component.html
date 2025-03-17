@@ -1,0 +1,21 @@
+<form [formGroup]="product" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="floatingInputValue" class="form-label" for="name">Name:</label>
+    <input id="floatingInputValue" class="form-control" formControlName="name" type="text">
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="price">Salary:</label>
+    <input class="form-control" formControlName="price" type="text">
+  </div>
+  <div formGroupName="productData" class="mb-3">
+    <div class="mb-3">
+      <label class="form-label" for="info">Info:</label>
+      <input class="form-control" formControlName="info" type="text">
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="desc">Description:</label>
+      <textarea class="form-control" formControlName="desc" type="text"></textarea>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
