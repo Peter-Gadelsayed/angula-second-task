@@ -5,7 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RecipedetailsComponent } from './recipedetails/recipedetails.component';
 import { PastaComponent } from './pasta/pasta.component';
 import { PizzaComponent } from './pizza/pizza.component';
-import { recipeGuard } from './guards/recipe.guard';
+import { recipeGuard } from './shared/guards/recipe.guard';
 
 const routes: Routes = [
   {

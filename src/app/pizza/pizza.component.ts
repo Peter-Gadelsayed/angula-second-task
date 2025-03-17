@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AppService } from '../services/app.service';
+import { AppService } from '../shared/services/app.service';
 import { Router } from '@angular/router';
 import { Pizza, Recipes } from '../models/pizza';
 
