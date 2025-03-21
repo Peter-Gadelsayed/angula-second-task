@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { ProdutsRoutingModule } from './produts-routing.module';
 import { ProdutsComponent } from './produts.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
-import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { ShowProductsComponent } from './show-products/show-products.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -14,7 +13,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     ProdutsComponent,
     UpdateProductComponent,
-    DeleteProductComponent,
     ShowProductsComponent,
     CreateProductComponent
   ],
